@@ -1,0 +1,18 @@
+姓名：名称：Docker 镜像 CI
+
+on:
+  push:
+    branches: [    分支：[“主要”]"main" ]
+  pull_request:
+    branches: [    分支：[“主要”]"main" ]
+
+jobs:
+
+  build:
+
+    runs-on:     运行：ubuntu-latest
+
+    steps:
+    - uses:     - 使用：actions/checkout@v4
+    - name:     - 名称：构建 Docker 镜像
+      run:       运行： docker build 。 --file Dockerfile --tag my-image-name:$(日期 +%s): $(日期 +%s)
